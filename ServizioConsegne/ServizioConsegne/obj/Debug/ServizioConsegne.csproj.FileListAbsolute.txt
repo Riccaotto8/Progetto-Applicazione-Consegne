@@ -1,0 +1,12 @@
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\bin\Debug\ServizioConsegne.exe.config
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\bin\Debug\ServizioConsegne.exe
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\bin\Debug\ServizioConsegne.pdb
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.csprojAssemblyReference.cache
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.Form1.resources
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.Properties.Resources.resources
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.csproj.GenerateResource.cache
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.csproj.CoreCompileInputs.cache
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.exe
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.pdb
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.User.resources
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.Administrator.resources
