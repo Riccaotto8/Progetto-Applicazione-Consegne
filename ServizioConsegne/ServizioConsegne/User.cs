@@ -20,7 +20,7 @@ namespace ServizioConsegne
             using (var conn = new SqlConnection(connString))
             {
                 conn.Open();
-                var sqlAdapter = new SqlDataAdapter("SELECT * FROM Menu1", conn);
+                var sqlAdapter = new SqlDataAdapter("SELECT * FROM Menu", conn);
                 var dataTable = new DataTable();
                 sqlAdapter.Fill(dataTable);
 

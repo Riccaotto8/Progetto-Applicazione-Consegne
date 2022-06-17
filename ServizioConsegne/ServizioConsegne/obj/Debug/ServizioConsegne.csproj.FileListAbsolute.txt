@@ -10,3 +10,4 @@ C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioC
 C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.pdb
 C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.User.resources
 C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.Administrator.resources
+C:\Users\ut02\source\repos\ServizioConsegne\ServizioConsegne\obj\Debug\ServizioConsegne.Menu.resources

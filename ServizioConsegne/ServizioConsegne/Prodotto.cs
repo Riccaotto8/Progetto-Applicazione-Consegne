@@ -19,7 +19,7 @@ namespace ServizioConsegne
 
         public Prodotto()
         {
-        }
+        } 
 
         public string Name
         {

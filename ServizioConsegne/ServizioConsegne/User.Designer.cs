@@ -30,26 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.navbarUser = new System.Windows.Forms.Panel();
-            this.panelLog = new System.Windows.Forms.Panel();
-            this.Login = new System.Windows.Forms.Button();
             this.assistenza = new System.Windows.Forms.Button();
             this.carrello = new System.Windows.Forms.Button();
             this.menu = new System.Windows.Forms.Button();
             this.home = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nomeProdottoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezzoProdottoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Login = new System.Windows.Forms.Button();
             this.prodottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.navbarUser.SuspendLayout();
-            this.panelLog.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // navbarUser
             // 
             this.navbarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.navbarUser.Controls.Add(this.panelLog);
+            this.navbarUser.Controls.Add(this.Login);
             this.navbarUser.Controls.Add(this.assistenza);
             this.navbarUser.Controls.Add(this.carrello);
             this.navbarUser.Controls.Add(this.menu);
@@ -60,25 +54,6 @@
             this.navbarUser.Size = new System.Drawing.Size(163, 568);
             this.navbarUser.TabIndex = 0;
             this.navbarUser.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
-            // 
-            // panelLog
-            // 
-            this.panelLog.Controls.Add(this.Login);
-            this.panelLog.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLog.Location = new System.Drawing.Point(0, 0);
-            this.panelLog.Name = "panelLog";
-            this.panelLog.Size = new System.Drawing.Size(163, 100);
-            this.panelLog.TabIndex = 4;
-            // 
-            // Login
-            // 
-            this.Login.Location = new System.Drawing.Point(42, 12);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(75, 23);
-            this.Login.TabIndex = 0;
-            this.Login.Text = "Login";
-            this.Login.UseVisualStyleBackColor = true;
-            this.Login.Click += new System.EventHandler(this.Log_Click);
             // 
             // assistenza
             // 
@@ -140,37 +115,15 @@
             this.home.UseVisualStyleBackColor = true;
             this.home.Click += new System.EventHandler(this.Home_Click);
             // 
-            // dataGridView1
+            // Login
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nomeProdottoDataGridViewTextBoxColumn,
-            this.prezzoProdottoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.prodottoBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(163, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(843, 568);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // nomeProdottoDataGridViewTextBoxColumn
-            // 
-            this.nomeProdottoDataGridViewTextBoxColumn.DataPropertyName = "NomeProdotto";
-            this.nomeProdottoDataGridViewTextBoxColumn.HeaderText = "NomeProdotto";
-            this.nomeProdottoDataGridViewTextBoxColumn.Name = "nomeProdottoDataGridViewTextBoxColumn";
-            this.nomeProdottoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prezzoProdottoDataGridViewTextBoxColumn
-            // 
-            this.prezzoProdottoDataGridViewTextBoxColumn.DataPropertyName = "PrezzoProdotto";
-            this.prezzoProdottoDataGridViewTextBoxColumn.HeaderText = "PrezzoProdotto";
-            this.prezzoProdottoDataGridViewTextBoxColumn.Name = "prezzoProdottoDataGridViewTextBoxColumn";
-            this.prezzoProdottoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Login.Location = new System.Drawing.Point(44, 12);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(75, 23);
+            this.Login.TabIndex = 0;
+            this.Login.Text = "Login";
+            this.Login.UseVisualStyleBackColor = true;
+            this.Login.Click += new System.EventHandler(this.Log_Click);
             // 
             // prodottoBindingSource
             // 
@@ -181,14 +134,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 568);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.navbarUser);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "User";
             this.Text = "Form2";
             this.navbarUser.ResumeLayout(false);
-            this.panelLog.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -201,11 +150,7 @@
         private System.Windows.Forms.Button assistenza;
         private System.Windows.Forms.Button carrello;
         private System.Windows.Forms.Button menu;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeProdottoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prezzoProdottoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource prodottoBindingSource;
-        private System.Windows.Forms.Panel panelLog;
         private System.Windows.Forms.Button Login;
     }
 }

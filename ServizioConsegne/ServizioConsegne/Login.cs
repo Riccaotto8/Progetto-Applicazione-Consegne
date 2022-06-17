@@ -27,7 +27,7 @@ namespace ServizioConsegne
             {
                 using (var connection = new SqlConnection(connString))
                 {
-                    var crono = new SqlCommand("INSERT INTO RegistroLog(TipoUtente, Orario) VALUES (@user, @time)", connection)
+                    var crono = new SqlCommand("INSERT INTO RegistroLog (TipoUtente, Orario) VALUES (@user, @time)", connection)
                     {
                         CommandType = CommandType.StoredProcedure
                     };
@@ -37,7 +37,11 @@ namespace ServizioConsegne
 
                     connection.Open();
 
-                    crono.ExecuteNonQuery();
+                    try
+                    {
+                        crono.ExecuteNonQuery();
+                    }
+                    catch (SqlException) { }
 
                     connection.Close();
                 }
@@ -49,7 +53,7 @@ namespace ServizioConsegne
             {
                 using (var connection = new SqlConnection(connString))
                 {
-                    var crono = new SqlCommand("INSERT INTO RegistroLog(TipoUtente, Orario) VALUES (@user, @time)", connection)
+                    var crono = new SqlCommand("INSERT INTO RegistroLog (TipoUtente, Orario) VALUES (@user, @time)", connection)
                     {
                         CommandType = CommandType.StoredProcedure
                     };
@@ -59,7 +63,11 @@ namespace ServizioConsegne
 
                     connection.Open();
 
-                    crono.ExecuteNonQuery();
+                    try
+                    {
+                        crono.ExecuteNonQuery();
+                    }
+                    catch (SqlException) { }
 
                     connection.Close();
                 }

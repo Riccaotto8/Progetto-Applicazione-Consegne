@@ -38,16 +38,17 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(419, 65);
+            this.panel1.Location = new System.Drawing.Point(26, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 150);
+            this.panel1.Size = new System.Drawing.Size(109, 103);
             this.panel1.TabIndex = 0;
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(13, 516);
+            this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login.Location = new System.Drawing.Point(26, 307);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(149, 40);
+            this.login.Size = new System.Drawing.Size(133, 35);
             this.login.TabIndex = 1;
             this.login.Text = "Login";
             this.login.UseVisualStyleBackColor = true;
@@ -57,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(257, 284);
+            this.label1.Location = new System.Drawing.Point(22, 193);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(257, 362);
+            this.label2.Location = new System.Drawing.Point(22, 249);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 3;
@@ -76,7 +77,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(419, 281);
+            this.textBox1.Location = new System.Drawing.Point(115, 190);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(191, 26);
             this.textBox1.TabIndex = 4;
@@ -84,7 +85,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(419, 359);
+            this.textBox2.Location = new System.Drawing.Point(115, 243);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(191, 26);
             this.textBox2.TabIndex = 5;
@@ -93,14 +94,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 568);
+            this.ClientSize = new System.Drawing.Size(378, 403);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.login);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

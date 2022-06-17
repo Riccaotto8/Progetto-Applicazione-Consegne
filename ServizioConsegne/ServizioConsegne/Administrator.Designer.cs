@@ -34,15 +34,13 @@ namespace ServizioConsegne
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.prodottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.delateRow = new System.Windows.Forms.Button();
+            this.addRow = new System.Windows.Forms.Button();
             this.upDate = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.addRow = new System.Windows.Forms.Button();
-            this.delateRow = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.nomeProdottoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoProdottoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodottoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -57,6 +55,7 @@ namespace ServizioConsegne
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -79,9 +78,7 @@ namespace ServizioConsegne
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.delateRow);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox3);
             this.splitContainer1.Panel1.Controls.Add(this.addRow);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.upDate);
             this.splitContainer1.Panel1.Controls.Add(this.textBox2);
             this.splitContainer1.Panel1.Controls.Add(this.textBox1);
@@ -94,6 +91,28 @@ namespace ServizioConsegne
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // delateRow
+            // 
+            this.delateRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delateRow.Location = new System.Drawing.Point(168, 394);
+            this.delateRow.Name = "delateRow";
+            this.delateRow.Size = new System.Drawing.Size(95, 28);
+            this.delateRow.TabIndex = 1;
+            this.delateRow.Text = "Delate Row";
+            this.delateRow.UseVisualStyleBackColor = true;
+            this.delateRow.Click += new System.EventHandler(this.DeleteRow_Click);
+            // 
+            // addRow
+            // 
+            this.addRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addRow.Location = new System.Drawing.Point(87, 394);
+            this.addRow.Name = "addRow";
+            this.addRow.Size = new System.Drawing.Size(75, 28);
+            this.addRow.TabIndex = 0;
+            this.addRow.Text = "Add Row";
+            this.addRow.UseVisualStyleBackColor = true;
+            this.addRow.Click += new System.EventHandler(this.AddRow_Click);
             // 
             // upDate
             // 
@@ -142,46 +161,6 @@ namespace ServizioConsegne
             this.label1.Size = new System.Drawing.Size(115, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome prodotto\r\n";
-            // 
-            // addRow
-            // 
-            this.addRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addRow.Location = new System.Drawing.Point(87, 394);
-            this.addRow.Name = "addRow";
-            this.addRow.Size = new System.Drawing.Size(75, 28);
-            this.addRow.TabIndex = 0;
-            this.addRow.Text = "Add Row";
-            this.addRow.UseVisualStyleBackColor = true;
-            this.addRow.Click += new System.EventHandler(this.AddRow_Click);
-            // 
-            // delateRow
-            // 
-            this.delateRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delateRow.Location = new System.Drawing.Point(168, 394);
-            this.delateRow.Name = "delateRow";
-            this.delateRow.Size = new System.Drawing.Size(95, 28);
-            this.delateRow.TabIndex = 1;
-            this.delateRow.Text = "Delate Row";
-            this.delateRow.UseVisualStyleBackColor = true;
-            this.delateRow.Click += new System.EventHandler(this.DeleteRow_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Indice";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(33, 121);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
-            this.textBox3.TabIndex = 7;
             // 
             // nomeProdottoDataGridViewTextBoxColumn
             // 
@@ -236,7 +215,5 @@ namespace ServizioConsegne
         private TextBox textBox2;
         private Button delateRow;
         private Button addRow;
-        private TextBox textBox3;
-        private Label label3;
     }
 }

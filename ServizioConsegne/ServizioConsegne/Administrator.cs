@@ -21,7 +21,7 @@ namespace ServizioConsegne
             using (var conn = new SqlConnection(connString))
             {
                 conn.Open();
-                var sqlAdapter = new SqlDataAdapter("SELECT * FROM Menu1", conn);
+                var sqlAdapter = new SqlDataAdapter("SELECT * FROM Menu", conn);
                 var dataTable = new DataTable();
                 sqlAdapter.Fill(dataTable);
 
@@ -44,31 +44,54 @@ namespace ServizioConsegne
             indexRow = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[indexRow];
 
-            //textBox1.Text = row.Cells[0].Value.ToString();
-            //textBox2.Text = row.Cells[1].Value.ToString();
+            textBox1.Text = row.Cells[0].Value.ToString();
+            textBox2.Text = row.Cells[1].Value.ToString();
         }
 
         private void Update_Click(object sender, EventArgs e)
         {
+           
+
             DataGridViewRow newDataRow = dataGridView1.Rows[indexRow];
 
-            newDataRow.Cells[0].Value = textBox1.Text;
-            newDataRow.Cells[1].Value = textBox2.Text;
+            var preName = newDataRow.Cells[0].Value;
+            var prePrice = newDataRow.Cells[1].Value;
 
-            using (var connection = new SqlConnection(connString))
+            /*using (var connection = new SqlConnection(connString))
             {
-
-                var update = new SqlCommand("UPDATE Menu1 SET NomeProdotto = @nome, Prezzo = @prezzo WHERE IDRow = @ind", connection);
+                var update = new SqlCommand("UPDATE Menu SET NomeProdotto = @nome, Prezzo = @prezzo WHERE IDRow = @ind", connection);
                 update.Parameters.AddWithValue("nome", textBox1.Text);
                 update.Parameters.AddWithValue("prezzo", Convert.ToDecimal(textBox2.Text));
-                update.Parameters.AddWithValue("ind", indexRow);
+                update.Parameters.AddWithValue("ind", indexKey);
 
                 connection.Open();
 
                 update.ExecuteNonQuery();
 
                 connection.Close();
+            }*/
+
+
+            using (var connection = new SqlConnection(connString))
+            {
+                var update = new SqlCommand("UPDATE Menu SET NomeProdotto = @nome, Prezzo = @prezzo WHERE NomeProdotto = @preName AND Prezzo = @prePrice", connection);
+                update.Parameters.AddWithValue("nome", textBox1.Text);
+                update.Parameters.AddWithValue("prezzo", Convert.ToDecimal(textBox2.Text));
+                update.Parameters.AddWithValue("preName", preName);
+                update.Parameters.AddWithValue("prePrice", Convert.ToDecimal(prePrice));
+
+                connection.Open();
+
+                try
+                {
+                    update.ExecuteNonQuery();
+                }
+                catch (SqlException) { }
+
+                connection.Close();
             }
+            newDataRow.Cells[0].Value = textBox1.Text;
+            newDataRow.Cells[1].Value = textBox2.Text;
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -81,18 +104,21 @@ namespace ServizioConsegne
             using (var connection = new SqlConnection(connString))
             {
 
-                var add = new SqlCommand("INSERT INTO Menu1(IDRow, NomeProdotto, Prezzo) VALUES (@ind, @nome, @prezzo)", connection)
+                var add = new SqlCommand("INSERT INTO Menu(NomeProdotto, Prezzo) VALUES (@nome, @prezzo)", connection)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                add.Parameters.AddWithValue("ind", Convert.ToInt32(textBox3.Text));
                 add.Parameters.AddWithValue("nome", textBox1.Text);
                 add.Parameters.AddWithValue("prezzo", Convert.ToDecimal(textBox2.Text));
                 
 
                 connection.Open();
 
-                add.ExecuteNonQuery();
+                try
+                {
+                    add.ExecuteNonQuery();
+                }
+                catch (SqlException) {}
 
                 connection.Close();
             }
@@ -103,8 +129,7 @@ namespace ServizioConsegne
             using (var connection = new SqlConnection(connString))
             {
 
-                var delete = new SqlCommand("DELETE FROM Menu1 WHERE IDRow = @ind AND NomeProdotto = @nome AND Prezzo = @prezzo", connection);
-                delete.Parameters.AddWithValue("ind", Convert.ToInt32(textBox3.Text));
+                var delete = new SqlCommand("DELETE FROM Menu WHERE NomeProdotto = @nome AND Prezzo = @prezzo", connection);
                 delete.Parameters.AddWithValue("nome", textBox1.Text);
                 delete.Parameters.AddWithValue("prezzo", Convert.ToDecimal(textBox2.Text));
 
