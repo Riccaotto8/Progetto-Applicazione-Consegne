@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.navbarUser = new System.Windows.Forms.Panel();
+            this.panelLog = new System.Windows.Forms.Panel();
+            this.NomeUtente = new System.Windows.Forms.TextBox();
+            this.Login = new System.Windows.Forms.Button();
             this.assistenza = new System.Windows.Forms.Button();
             this.carrello = new System.Windows.Forms.Button();
             this.menu = new System.Windows.Forms.Button();
@@ -39,6 +42,7 @@
             this.prezzoProdottoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.navbarUser.SuspendLayout();
+            this.panelLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +50,7 @@
             // navbarUser
             // 
             this.navbarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.navbarUser.Controls.Add(this.panelLog);
             this.navbarUser.Controls.Add(this.assistenza);
             this.navbarUser.Controls.Add(this.carrello);
             this.navbarUser.Controls.Add(this.menu);
@@ -56,6 +61,35 @@
             this.navbarUser.Size = new System.Drawing.Size(163, 568);
             this.navbarUser.TabIndex = 0;
             this.navbarUser.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // panelLog
+            // 
+            this.panelLog.Controls.Add(this.NomeUtente);
+            this.panelLog.Controls.Add(this.Login);
+            this.panelLog.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLog.Location = new System.Drawing.Point(0, 0);
+            this.panelLog.Name = "panelLog";
+            this.panelLog.Size = new System.Drawing.Size(163, 100);
+            this.panelLog.TabIndex = 4;
+            // 
+            // NomeUtente
+            // 
+            this.NomeUtente.Dock = System.Windows.Forms.DockStyle.Left;
+            this.NomeUtente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeUtente.Location = new System.Drawing.Point(0, 0);
+            this.NomeUtente.Name = "NomeUtente";
+            this.NomeUtente.Size = new System.Drawing.Size(157, 26);
+            this.NomeUtente.TabIndex = 1;
+            // 
+            // Login
+            // 
+            this.Login.Location = new System.Drawing.Point(0, 58);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(75, 23);
+            this.Login.TabIndex = 0;
+            this.Login.Text = "Login";
+            this.Login.UseVisualStyleBackColor = true;
+            this.Login.Click += new System.EventHandler(this.Log_Click);
             // 
             // assistenza
             // 
@@ -119,8 +153,8 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -130,6 +164,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(163, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(843, 568);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
@@ -139,12 +174,14 @@
             this.nomeProdottoDataGridViewTextBoxColumn.DataPropertyName = "NomeProdotto";
             this.nomeProdottoDataGridViewTextBoxColumn.HeaderText = "NomeProdotto";
             this.nomeProdottoDataGridViewTextBoxColumn.Name = "nomeProdottoDataGridViewTextBoxColumn";
+            this.nomeProdottoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // prezzoProdottoDataGridViewTextBoxColumn
             // 
             this.prezzoProdottoDataGridViewTextBoxColumn.DataPropertyName = "PrezzoProdotto";
             this.prezzoProdottoDataGridViewTextBoxColumn.HeaderText = "PrezzoProdotto";
             this.prezzoProdottoDataGridViewTextBoxColumn.Name = "prezzoProdottoDataGridViewTextBoxColumn";
+            this.prezzoProdottoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // prodottoBindingSource
             // 
@@ -161,6 +198,8 @@
             this.Name = "User";
             this.Text = "Form2";
             this.navbarUser.ResumeLayout(false);
+            this.panelLog.ResumeLayout(false);
+            this.panelLog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -178,5 +217,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeProdottoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezzoProdottoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource prodottoBindingSource;
+        private System.Windows.Forms.Panel panelLog;
+        private System.Windows.Forms.TextBox NomeUtente;
+        private System.Windows.Forms.Button Login;
     }
 }

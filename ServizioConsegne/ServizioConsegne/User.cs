@@ -13,11 +13,11 @@ namespace ServizioConsegne
 {
     public partial class User : Form
     {
-
+        private string connString = @"Data Source=PCCHIARA\SQLEXPRESS;Initial Catalog= Pizzeria;User ID=sa;Password=cs";
         public User()
         {
             InitializeComponent();
-            using (var conn = new SqlConnection(@"Data Source=PCCHIARA\SQLEXPRESS;Initial Catalog= Pizzeria;User ID=sa;Password=cs"))
+            using (var conn = new SqlConnection(connString))
             {
                 conn.Open();
                 var sqlAdapter = new SqlDataAdapter("SELECT * FROM Menu", conn);
@@ -27,9 +27,11 @@ namespace ServizioConsegne
                 var prodotti = new List<Prodotto>();
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    var Prodotto = new Prodotto();
-                    Prodotto.Name = (string)row["NomeProdotto"];
-                    Prodotto.Prezzo = Convert.ToDecimal(row["Prezzo"]);
+                    var Prodotto = new Prodotto
+                    {
+                        Name = (string)row["NomeProdotto"],
+                        Prezzo = Convert.ToDecimal(row["Prezzo"])
+                    };
                     prodotti.Add(Prodotto);
                 }
                 prodottoBindingSource.DataSource = prodotti;

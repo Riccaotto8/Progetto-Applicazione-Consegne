@@ -13,10 +13,12 @@ namespace ServizioConsegne
 {
     public partial class Administrator : Form
     {
+        private int indexRow;
+        private string connString = @"Data Source = PCCHIARA\SQLEXPRESS;Initial Catalog = Pizzeria; User ID = sa; Password=cs";
         public Administrator()
         {
             InitializeComponent();
-            using (var conn = new SqlConnection(@"Data Source=PCCHIARA\SQLEXPRESS;Initial Catalog= Pizzeria;User ID=sa;Password=cs"))
+            using (var conn = new SqlConnection(connString))
             {
                 conn.Open();
                 var sqlAdapter = new SqlDataAdapter("SELECT * FROM Menu", conn);
@@ -26,28 +28,40 @@ namespace ServizioConsegne
                 var prodotti = new List<Prodotto>();
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    var Prodotto = new Prodotto();
-                    Prodotto.Name = (string)row["NomeProdotto"];
-                    Prodotto.Prezzo = Convert.ToDecimal(row["Prezzo"]);
+                    var Prodotto = new Prodotto
+                    {
+                        Name = (string)row["NomeProdotto"],
+                        Prezzo = Convert.ToDecimal(row["Prezzo"])
+                    };
                     prodotti.Add(Prodotto);
                 }
-                prodottoBindingSource.DataSource = prodotti;
+                prodottoBindingSource1.DataSource = prodotti;
             }
         }
 
-        private void Add_Click(object sender, EventArgs e)
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            indexRow = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[indexRow];
 
+            textBox1.Text = row.Cells[0].Value.ToString();
+            textBox2.Text = row.Cells[1].Value.ToString();
         }
 
-        private void Delete_Click(object sender, EventArgs e)
+        private void Update_Click(object sender, EventArgs e)
         {
+            DataGridViewRow newDataRow = dataGridView1.Rows[indexRow];
 
-        }
+            newDataRow.Cells[0].Value = textBox1.Text;
+            newDataRow.Cells[1].Value = textBox2.Text;
 
-        private void Viewdata_Click(object sender, EventArgs e)
-        {
-
+            using (SqlConnection connection = new SqlConnection(connString)
+            {
+                using (SqlCommand command = new SqlCommand("SELECT * FROM Menu"))
+                {
+                    
+                }
+            }
         }
     }
 }

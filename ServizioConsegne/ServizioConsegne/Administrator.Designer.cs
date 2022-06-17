@@ -1,4 +1,6 @@
-﻿namespace ServizioConsegne
+﻿using System.Windows.Forms;
+
+namespace ServizioConsegne
 {
     partial class Administrator
     {
@@ -29,62 +31,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.navbarAdmin = new System.Windows.Forms.Panel();
-            this.viewAdmin = new System.Windows.Forms.Button();
-            this.deleteAdmin = new System.Windows.Forms.Button();
-            this.addElement = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.prodottoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.prodottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.upDate = new System.Windows.Forms.Button();
             this.nomeProdottoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoProdottoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.navbarAdmin.SuspendLayout();
+            this.prodottoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // navbarAdmin
-            // 
-            this.navbarAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.navbarAdmin.Controls.Add(this.viewAdmin);
-            this.navbarAdmin.Controls.Add(this.deleteAdmin);
-            this.navbarAdmin.Controls.Add(this.addElement);
-            this.navbarAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.navbarAdmin.Location = new System.Drawing.Point(0, 0);
-            this.navbarAdmin.Name = "navbarAdmin";
-            this.navbarAdmin.Size = new System.Drawing.Size(800, 37);
-            this.navbarAdmin.TabIndex = 0;
-            // 
-            // viewAdmin
-            // 
-            this.viewAdmin.Location = new System.Drawing.Point(265, 4);
-            this.viewAdmin.Name = "viewAdmin";
-            this.viewAdmin.Size = new System.Drawing.Size(120, 30);
-            this.viewAdmin.TabIndex = 2;
-            this.viewAdmin.Text = "View Data";
-            this.viewAdmin.UseVisualStyleBackColor = true;
-            this.viewAdmin.Click += new System.EventHandler(this.Viewdata_Click);
-            // 
-            // deleteAdmin
-            // 
-            this.deleteAdmin.Location = new System.Drawing.Point(139, 4);
-            this.deleteAdmin.Name = "deleteAdmin";
-            this.deleteAdmin.Size = new System.Drawing.Size(120, 30);
-            this.deleteAdmin.TabIndex = 1;
-            this.deleteAdmin.Text = "Delete";
-            this.deleteAdmin.UseVisualStyleBackColor = true;
-            this.deleteAdmin.Click += new System.EventHandler(this.Delete_Click);
-            // 
-            // addElement
-            // 
-            this.addElement.Location = new System.Drawing.Point(13, 4);
-            this.addElement.Name = "addElement";
-            this.addElement.Size = new System.Drawing.Size(120, 30);
-            this.addElement.TabIndex = 0;
-            this.addElement.Text = "Add";
-            this.addElement.UseVisualStyleBackColor = true;
-            this.addElement.Click += new System.EventHandler(this.Add_Click);
             // 
             // dataGridView1
             // 
@@ -95,59 +60,130 @@
             this.prezzoProdottoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.prodottoBindingSource1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 37);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 413);
+            this.dataGridView1.Size = new System.Drawing.Size(530, 450);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
-            // prodottoBindingSource1
+            // splitContainer1
             // 
-            this.prodottoBindingSource1.DataSource = typeof(ServizioConsegne.Prodotto);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // prodottoBindingSource
+            // splitContainer1.Panel1
             // 
-            this.prodottoBindingSource.DataSource = typeof(ServizioConsegne.Prodotto);
+            this.splitContainer1.Panel1.Controls.Add(this.upDate);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox2);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
+            this.splitContainer1.SplitterDistance = 266;
+            this.splitContainer1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nome prodotto\r\n";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(30, 160);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Prezzo prodotto";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(33, 98);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(180, 26);
+            this.textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(34, 213);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(180, 26);
+            this.textBox2.TabIndex = 3;
+            // 
+            // upDate
+            // 
+            this.upDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upDate.Location = new System.Drawing.Point(34, 327);
+            this.upDate.Name = "upDate";
+            this.upDate.Size = new System.Drawing.Size(75, 23);
+            this.upDate.TabIndex = 4;
+            this.upDate.Text = "Update";
+            this.upDate.UseVisualStyleBackColor = true;
+            this.upDate.Click += new System.EventHandler(this.Update_Click);
             // 
             // nomeProdottoDataGridViewTextBoxColumn
             // 
             this.nomeProdottoDataGridViewTextBoxColumn.DataPropertyName = "NomeProdotto";
             this.nomeProdottoDataGridViewTextBoxColumn.HeaderText = "NomeProdotto";
             this.nomeProdottoDataGridViewTextBoxColumn.Name = "nomeProdottoDataGridViewTextBoxColumn";
+            this.nomeProdottoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // prezzoProdottoDataGridViewTextBoxColumn
             // 
             this.prezzoProdottoDataGridViewTextBoxColumn.DataPropertyName = "PrezzoProdotto";
             this.prezzoProdottoDataGridViewTextBoxColumn.HeaderText = "PrezzoProdotto";
             this.prezzoProdottoDataGridViewTextBoxColumn.Name = "prezzoProdottoDataGridViewTextBoxColumn";
+            this.prezzoProdottoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prodottoBindingSource1
+            // 
+            this.prodottoBindingSource1.DataSource = typeof(ServizioConsegne.Prodotto);
             // 
             // Administrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.navbarAdmin);
+            this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Administrator";
             this.Text = "Form2";
-            this.navbarAdmin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel navbarAdmin;
-        private System.Windows.Forms.Button viewAdmin;
-        private System.Windows.Forms.Button deleteAdmin;
-        private System.Windows.Forms.Button addElement;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource prodottoBindingSource1;
         private System.Windows.Forms.BindingSource prodottoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeProdottoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezzoProdottoDataGridViewTextBoxColumn;
+        private SplitContainer splitContainer1;
+        private Label label2;
+        private Label label1;
+        private TextBox textBox1;
+        private Button upDate;
+        private TextBox textBox2;
     }
 }
