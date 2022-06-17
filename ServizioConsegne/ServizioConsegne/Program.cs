@@ -15,6 +15,7 @@ namespace ServizioConsegne
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1());
             //Application.Run(new User());
             Application.Run(new Administrator());
         }

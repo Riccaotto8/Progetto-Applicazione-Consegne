@@ -21,7 +21,7 @@ namespace ServizioConsegne
             using (var conn = new SqlConnection(connString))
             {
                 conn.Open();
-                var sqlAdapter = new SqlDataAdapter("SELECT * FROM Menu", conn);
+                var sqlAdapter = new SqlDataAdapter("SELECT * FROM Menu1", conn);
                 var dataTable = new DataTable();
                 sqlAdapter.Fill(dataTable);
 
@@ -44,8 +44,8 @@ namespace ServizioConsegne
             indexRow = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[indexRow];
 
-            textBox1.Text = row.Cells[0].Value.ToString();
-            textBox2.Text = row.Cells[1].Value.ToString();
+            //textBox1.Text = row.Cells[0].Value.ToString();
+            //textBox2.Text = row.Cells[1].Value.ToString();
         }
 
         private void Update_Click(object sender, EventArgs e)
@@ -55,12 +55,64 @@ namespace ServizioConsegne
             newDataRow.Cells[0].Value = textBox1.Text;
             newDataRow.Cells[1].Value = textBox2.Text;
 
-            using (SqlConnection connection = new SqlConnection(connString)
+            using (var connection = new SqlConnection(connString))
             {
-                using (SqlCommand command = new SqlCommand("SELECT * FROM Menu"))
+
+                var update = new SqlCommand("UPDATE Menu1 SET NomeProdotto = @nome, Prezzo = @prezzo WHERE IDRow = @ind", connection);
+                update.Parameters.AddWithValue("nome", textBox1.Text);
+                update.Parameters.AddWithValue("prezzo", Convert.ToDecimal(textBox2.Text));
+                update.Parameters.AddWithValue("ind", indexRow);
+
+                connection.Open();
+
+                update.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddRow_Click(object sender, EventArgs e)
+        {
+            using (var connection = new SqlConnection(connString))
+            {
+
+                var add = new SqlCommand("INSERT INTO Menu1(IDRow, NomeProdotto, Prezzo) VALUES (@ind, @nome, @prezzo)", connection)
                 {
-                    
-                }
+                    CommandType = CommandType.StoredProcedure
+                };
+                add.Parameters.AddWithValue("ind", Convert.ToInt32(textBox3.Text));
+                add.Parameters.AddWithValue("nome", textBox1.Text);
+                add.Parameters.AddWithValue("prezzo", Convert.ToDecimal(textBox2.Text));
+                
+
+                connection.Open();
+
+                add.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        private void DeleteRow_Click(object sender, EventArgs e)
+        {
+            using (var connection = new SqlConnection(connString))
+            {
+
+                var delete = new SqlCommand("DELETE FROM Menu1 WHERE IDRow = @ind AND NomeProdotto = @nome AND Prezzo = @prezzo", connection);
+                delete.Parameters.AddWithValue("ind", Convert.ToInt32(textBox3.Text));
+                delete.Parameters.AddWithValue("nome", textBox1.Text);
+                delete.Parameters.AddWithValue("prezzo", Convert.ToDecimal(textBox2.Text));
+
+                connection.Open();
+
+                delete.ExecuteNonQuery();
+
+                connection.Close();
             }
         }
     }

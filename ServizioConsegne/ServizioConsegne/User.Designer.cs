@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.navbarUser = new System.Windows.Forms.Panel();
             this.panelLog = new System.Windows.Forms.Panel();
-            this.NomeUtente = new System.Windows.Forms.TextBox();
             this.Login = new System.Windows.Forms.Button();
             this.assistenza = new System.Windows.Forms.Button();
             this.carrello = new System.Windows.Forms.Button();
@@ -64,7 +63,6 @@
             // 
             // panelLog
             // 
-            this.panelLog.Controls.Add(this.NomeUtente);
             this.panelLog.Controls.Add(this.Login);
             this.panelLog.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLog.Location = new System.Drawing.Point(0, 0);
@@ -72,18 +70,9 @@
             this.panelLog.Size = new System.Drawing.Size(163, 100);
             this.panelLog.TabIndex = 4;
             // 
-            // NomeUtente
-            // 
-            this.NomeUtente.Dock = System.Windows.Forms.DockStyle.Left;
-            this.NomeUtente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomeUtente.Location = new System.Drawing.Point(0, 0);
-            this.NomeUtente.Name = "NomeUtente";
-            this.NomeUtente.Size = new System.Drawing.Size(157, 26);
-            this.NomeUtente.TabIndex = 1;
-            // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(0, 58);
+            this.Login.Location = new System.Drawing.Point(42, 12);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(75, 23);
             this.Login.TabIndex = 0;
@@ -199,7 +188,6 @@
             this.Text = "Form2";
             this.navbarUser.ResumeLayout(false);
             this.panelLog.ResumeLayout(false);
-            this.panelLog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -218,7 +206,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prezzoProdottoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource prodottoBindingSource;
         private System.Windows.Forms.Panel panelLog;
-        private System.Windows.Forms.TextBox NomeUtente;
         private System.Windows.Forms.Button Login;
     }
 }
